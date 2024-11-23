@@ -4,50 +4,84 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Movement Settings")]
-    public float moveSpeed = 5f;       // Kecepatan gerakan horizontal
-    public float jumpForce = 10f;     // Kekuatan lompatan
+    Rigidbody2D rb;
+    private BoxCollider2D coll;
+    private Animator anim;
+    private SpriteRenderer sprite;
 
-    private Rigidbody2D rb;           // Komponen Rigidbody2D
-    private bool isGrounded = false;  // Apakah karakter sedang di tanah
+    [SerializeField] private LayerMask jumpableGround;
 
-    private SpriteRenderer spriteRenderer; // Komponen SpriteRenderer untuk flipping
 
-    [Header("Ground Check")]
-    public Transform groundCheck;     // Posisi pengecekan tanah
-    public float groundCheckRadius = 0.2f; // Radius pengecekan tanah
-    public LayerMask groundLayer;     // Layer yang dianggap tanah
+    [SerializeField] float jump = 0f;
+    [SerializeField] float moveSpeed = 7f;
 
-    void Start()
+
+    private enum MovementState { idle, walk, jump, fall }
+
+    float dirX;
+
+    // Start is called before the first frame update
+    private void Start()
     {
-        // Ambil komponen Rigidbody2D dan SpriteRenderer
         rb = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        coll = GetComponent<BoxCollider2D>();
+        anim = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
+    // Update is called once per frame
     void Update()
     {
-        // Gerakan horizontal
-        float moveInput = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+        dirX = Input.GetAxis("Horizontal");
 
-        // Flip sprite berdasarkan arah gerakan
-        if (moveInput > 0)
+        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+
+        if (Input.GetButtonDown("Jump") && isGrounded())
         {
-            spriteRenderer.flipX = false; // Menghadap kanan
-        }
-        else if (moveInput < 0)
-        {
-            spriteRenderer.flipX = true; // Menghadap kiri
+            rb.velocity = new Vector2(rb.velocity.x, jump);
+
         }
 
-        // Melompat
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        UpdateAnimation();
+
+    }
+
+    void UpdateAnimation()
+    {
+        MovementState state;
+        if (dirX > 0f)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            state = MovementState.walk;
+            sprite.flipX = false;
+            // Karakter bergerak ke kanan
+
+        }
+        else if (dirX < 0f)
+        {
+            state = MovementState.walk;
+            sprite.flipX = true;
+            // Karakter bergerak ke kiri
+
+        }
+        else
+        {
+            state = MovementState.idle;
         }
 
-        // Cek apakah karakter sedang di tanah
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        if (rb.velocity.y > .1f)
+        {
+            state = MovementState.jump;
+        }
+        else if (rb.velocity.y < -.1f)
+        {
+            state = MovementState.fall;
+        }
+
+        anim.SetInteger("state", (int)state);
+    }
+
+    private bool isGrounded()
+    {
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
 }
