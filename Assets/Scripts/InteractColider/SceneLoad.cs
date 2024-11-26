@@ -9,4 +9,16 @@ public class SceneLoad : MonoBehaviour
     {
         SceneManager.LoadScene(nama);
     }
+
+    public void exitGame()
+    {
+        Application.Quit();
+
+        // Hanya untuk debugging di Editor Unity (hapus pada build final)
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+    }
+
+
 }
