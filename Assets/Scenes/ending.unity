@@ -430,8 +430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogObjects:
   - {fileID: 1141248825}
-  - {fileID: 0}
-  nextSceneName: level1
+  nextSceneName: mainmenu
 --- !u!1 &1141248825
 GameObject:
   m_ObjectHideFlags: 0
