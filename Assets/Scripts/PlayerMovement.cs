@@ -32,15 +32,16 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        dirX = Input.GetAxis("Horizontal");
+        /*dirX = Input.GetAxis("Horizontal");
 
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+
 
         if (Input.GetButtonDown("Jump") && isGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jump);
 
-        }
+        }*/
 
         UpdateAnimation();
 
@@ -83,5 +84,35 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded()
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
+    }
+
+
+
+    //MOBILE MOVEMENT
+    public void MoveRight()
+    {
+        dirX = 1f;  // Bergerak ke kanan
+        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+    }
+
+    public void MoveLeft()
+    {
+        dirX = -1f; // Bergerak ke kiri
+        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+    }
+
+    // Fungsi dipanggil saat tombol dilepas
+    public void StopMoving()
+    {
+        dirX = 0f;  // Berhenti
+        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+    }
+
+    public void Jump()
+    {
+        if (isGrounded())
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jump);
+        }
     }
 }
