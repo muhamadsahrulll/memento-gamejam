@@ -32,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Update velocity berdasarkan dirX
+        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
         /*dirX = Input.GetAxis("Horizontal");
 
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
@@ -88,23 +90,25 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-    //MOBILE MOVEMENT
-    public void MoveRight()
-    {
-        dirX = 1f;  // Bergerak ke kanan
-        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
-    }
-
-    public void MoveLeft()
+    // Dipanggil saat tombol ditekan
+    public void PointerDownLeft()
     {
         dirX = -1f; // Bergerak ke kiri
-        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
     }
 
-    // Fungsi dipanggil saat tombol dilepas
-    public void StopMoving()
+    public void PointerDownRight()
     {
-        dirX = 0f;  // Berhenti
+        dirX = 1f; // Bergerak ke kanan
+    }
+
+    // Dipanggil saat tombol dilepas
+    public void PointerUp()
+    {
+        dirX = 0f; // Berhenti
+    }
+
+    private void FixedUpdate()
+    {
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
     }
 
