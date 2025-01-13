@@ -7,14 +7,21 @@ public class MusicManager : MonoBehaviour
     [SerializeField] AudioSource musicScource;
     [SerializeField] AudioSource SFXSource;
     [SerializeField] AudioSource footStepSource;
+    [SerializeField] public AudioSource vo_kalah_menang;
 
     public static MusicManager instance;
 
     public AudioClip backsound;
     public AudioClip death;
     public AudioClip stepMovement;
+    public AudioClip winGame;
 
+    public AudioClip vo_kalah;
+    public AudioClip vo_menang;
 
+    public SceneLoad SceneLoad;
+
+    public UIManager UIManager;
 
     private void Awake()
     {
@@ -42,5 +49,15 @@ public class MusicManager : MonoBehaviour
     public void PlayFootStep()
     {
         footStepSource.Play();
+    }
+
+    public void kalah()
+    {
+        vo_kalah_menang.PlayOneShot(vo_kalah);
+    }
+    
+    public void menang()
+    {
+        vo_kalah_menang.PlayOneShot(vo_menang);
     }
 }

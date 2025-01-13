@@ -12,6 +12,8 @@ public class RobotPatrol : MonoBehaviour
     private bool movingRight = true; // Arah gerakan
     private SpriteRenderer spriteRenderer; // Komponen SpriteRenderer
 
+    public MusicManager MusicManager;
+
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -62,7 +64,8 @@ public class RobotPatrol : MonoBehaviour
 
             // Nonaktifkan game object Player
             collision.gameObject.SetActive(false);
-
+            MusicManager.kalah();
+            MusicManager.vo_kalah_menang.Play();
             gameover.SetActive(true);
         }
     }

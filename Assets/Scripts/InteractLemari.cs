@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InteractLemari : MonoBehaviour
 {
     public GameObject piyama;
-    public GameObject UITutor;
+    public Button buttonPakai;
+
     private bool isPlayerInRange = false;
     private Animator anim;
 
@@ -16,7 +18,7 @@ public class InteractLemari : MonoBehaviour
     void Update()
     {
         // Mengecek apakah player menekan tombol E saat berada di area trigger
-        if (isPlayerInRange && Input.GetKeyDown(KeyCode.E))
+        if (isPlayerInRange && buttonPakai == true)
         {
             anim.SetBool("isOpen", true);
             // Mengubah status aktif GameObject A
@@ -34,7 +36,7 @@ public class InteractLemari : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isPlayerInRange = true;
-            UITutor.SetActive(true);
+            buttonPakai.interactable = true;
             Debug.Log("Player berada di area trigger.");
         }
     }
@@ -44,7 +46,7 @@ public class InteractLemari : MonoBehaviour
         // Mengecek apakah player keluar dari area trigger
         if (collision.CompareTag("Player"))
         {
-            UITutor.SetActive(false);
+            buttonPakai.interactable = false;
             isPlayerInRange = false;
             Debug.Log("Player keluar dari area trigger.");
         }
