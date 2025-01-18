@@ -7,7 +7,6 @@ public class RobotPatrol : MonoBehaviour
     public float leftBoundary = 71f; // Batas kiri
     public float rightBoundary = 75f; // Batas kanan
     public float speed = 2f; // Kecepatan robot
-    public GameObject gameover;
 
     private bool movingRight = true; // Arah gerakan
     private SpriteRenderer spriteRenderer; // Komponen SpriteRenderer
@@ -52,21 +51,6 @@ public class RobotPatrol : MonoBehaviour
         if (spriteRenderer != null)
         {
             spriteRenderer.flipX = !spriteRenderer.flipX; // Membalik sprite pada sumbu X
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            Debug.Log("Mati");
-            // Tambahkan logika lain jika diperlukan
-
-            // Nonaktifkan game object Player
-            collision.gameObject.SetActive(false);
-            MusicManager.kalah();
-            MusicManager.vo_kalah_menang.Play();
-            gameover.SetActive(true);
         }
     }
 }

@@ -8,7 +8,24 @@ public class LoseAndWin : MonoBehaviour
     public GameObject winGame;
 
     SceneController sceneController;
-    MusicManager MusicManager;
+    public MusicManager MusicManager;
+    public UIManager UIManager;
+
+    public void Start()
+    {
+        MusicManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<MusicManager>();
+        //UIManager = GameObject.Find("Canvas").GetComponent<UIManager>();
+        if (UIManager != null)
+        {
+            Debug.Log("UIManager berhasil ditemukan dan diassign.");
+        }
+        else
+        {
+            Debug.LogError("UIManager tidak ditemukan! Pastikan UIManager ada pada objek Canvas.");
+        }
+
+        Debug.Log("UIManager reference: " + UIManager);
+    }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -18,6 +35,26 @@ public class LoseAndWin : MonoBehaviour
         {
             if (gameObject.CompareTag("gameOver"))
             {
+                if (gameObject.name == "EnemyHandphone")
+                {
+                    UIManager.anak_GameOver.sprite = UIManager.UIKalah[0];
+                }
+
+                if (gameObject.name == "EnemyHandphone2")
+                {
+                    UIManager.anak_GameOver.sprite = UIManager.UIKalah[1];
+                }
+                
+                else if (gameObject.name == "EnemyTV")
+                {
+                    UIManager.anak_GameOver.sprite = UIManager.UIKalah[2];
+                }
+
+                else if (gameObject.name == "Robot")
+                {
+                    UIManager.anak_GameOver.sprite = UIManager.UIKalah[3];
+                }
+
                 MusicManager.PlaySFX(MusicManager.death);
                 // Nonaktifkan game object Player
                 collision.gameObject.SetActive(false);
@@ -49,10 +86,5 @@ public class LoseAndWin : MonoBehaviour
                 Debug.Log("Menang");
             }
         }
-    }
-
-    private void Awake()
-    {
-        MusicManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<MusicManager>();
     }
 }

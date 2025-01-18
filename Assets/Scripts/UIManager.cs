@@ -5,18 +5,20 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public Sprite[] UIKalah;
+    [SerializeField] public Sprite[] UIKalah;
     public bool isRestarted = false;
 
     public MusicManager MusicManager;
-
     public Button buttonRestart;
+
+    public Image anak_GameOver;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         MusicManager = GameObject.Find("MusicManager").GetComponent<MusicManager>();
-        
     }
 
     // Update is called once per frame

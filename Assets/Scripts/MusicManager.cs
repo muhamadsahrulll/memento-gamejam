@@ -1,13 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MusicManager : MonoBehaviour
 {
-    [SerializeField] AudioSource musicScource;
+    [SerializeField] public AudioSource musicScource;
     [SerializeField] AudioSource SFXSource;
     [SerializeField] AudioSource footStepSource;
     [SerializeField] public AudioSource vo_kalah_menang;
+
+    public VideoPlayer videoPlayer;
+    public bool isVideoMute = false;
 
     public static MusicManager instance;
 
@@ -15,13 +21,10 @@ public class MusicManager : MonoBehaviour
     public AudioClip death;
     public AudioClip stepMovement;
     public AudioClip winGame;
+    public AudioClip buttonClick;
 
     public AudioClip vo_kalah;
     public AudioClip vo_menang;
-
-    public SceneLoad SceneLoad;
-
-    public UIManager UIManager;
 
     private void Awake()
     {
@@ -29,6 +32,7 @@ public class MusicManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            SceneManager.sceneLoaded += OnSceneLoaded; // Tambahkan listener untuk sceneLoaded
         }
         else
         {
@@ -40,11 +44,36 @@ public class MusicManager : MonoBehaviour
         //buat play backsound tanpa diulang
         musicScource.clip = backsound;
         musicScource.Play();
+
+
+    }
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        AssignButtonListeners();
+    }
+
+    public void AssignButtonListeners()
+    {
+        //buat play sfx click button
+        Button[] buttons = Resources.FindObjectsOfTypeAll<Button>();
+        foreach (Button btn in buttons)
+        {
+            if (btn.CompareTag("PlayerControls"))
+            {
+                
+            }
+
+            else
+            {
+                btn.onClick.AddListener(() => PlaySFX(buttonClick));
+            }
+        }
     }
 
     public void PlaySFX(AudioClip clip)
     {
         SFXSource.PlayOneShot(clip);
+        Debug.Log("sfx button dipanggil");
     }
     public void PlayFootStep()
     {
@@ -54,10 +83,43 @@ public class MusicManager : MonoBehaviour
     public void kalah()
     {
         vo_kalah_menang.PlayOneShot(vo_kalah);
+        if (isVideoMute == true)
+        {
+            vo_kalah_menang.mute = true;
+        }
+
+        else
+        {
+            vo_kalah_menang.mute = false;
+        }
     }
-    
+
     public void menang()
     {
         vo_kalah_menang.PlayOneShot(vo_menang);
+        if (isVideoMute == true)
+        {
+            vo_kalah_menang.mute = true;
+        }
+
+        else
+        {
+            vo_kalah_menang.mute = false;
+        }
+    }
+
+    public void VideoMute(bool value)
+    {
+        isVideoMute = value;
+        if (isVideoMute == true)
+        {
+            Debug.Log("Video di Mute");
+        }
+        
+        else
+        {
+            Debug.Log("Video di UnMute");
+        }
+
     }
 }

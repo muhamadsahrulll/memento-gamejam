@@ -7,6 +7,7 @@ public class InteractLemari : MonoBehaviour
 {
     public GameObject piyama;
     public Button buttonPakai;
+    public bool isClicked = false;
 
     private bool isPlayerInRange = false;
     private Animator anim;
@@ -18,7 +19,7 @@ public class InteractLemari : MonoBehaviour
     void Update()
     {
         // Mengecek apakah player menekan tombol E saat berada di area trigger
-        if (isPlayerInRange && buttonPakai == true)
+        if (isPlayerInRange && buttonPakai == true  && isClicked == true)
         {
             anim.SetBool("isOpen", true);
             // Mengubah status aktif GameObject A
@@ -50,5 +51,10 @@ public class InteractLemari : MonoBehaviour
             isPlayerInRange = false;
             Debug.Log("Player keluar dari area trigger.");
         }
+    }
+
+    public void BukaLemari()
+    {
+        isClicked = true;
     }
 }
