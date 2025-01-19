@@ -35,6 +35,13 @@ public class intro : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            SceneManager.LoadScene(level1);
+        }
+    }
     void OnVideoEnd(VideoPlayer vp)
     {
         // Ketika video pertama selesai, ganti dengan video kedua

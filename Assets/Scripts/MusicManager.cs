@@ -10,6 +10,7 @@ public class MusicManager : MonoBehaviour
     [SerializeField] public AudioSource musicScource;
     [SerializeField] AudioSource SFXSource;
     [SerializeField] AudioSource footStepSource;
+    [SerializeField] public AudioSource jumpSource;
     [SerializeField] public AudioSource vo_kalah_menang;
 
     public VideoPlayer videoPlayer;
@@ -22,6 +23,9 @@ public class MusicManager : MonoBehaviour
     public AudioClip stepMovement;
     public AudioClip winGame;
     public AudioClip buttonClick;
+    public AudioClip Jump;
+    public AudioClip Landing;
+
 
     public AudioClip vo_kalah;
     public AudioClip vo_menang;
@@ -78,6 +82,16 @@ public class MusicManager : MonoBehaviour
     public void PlayFootStep()
     {
         footStepSource.Play();
+    }
+    
+    public void StopFootStep()
+    {
+        footStepSource.Stop();
+    }
+    
+    public void JumpSFX()
+    {
+        jumpSource.Play();
     }
 
     public void kalah()

@@ -9,6 +9,7 @@ TagManager:
   - gameOver
   - Button
   - PlayerControls
+  - Ground
   layers:
   - Default
   - TransparentFX

@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private LayerMask jumpableGround;
 
-
+    public MusicManager MusicManager;
     [SerializeField] float jump = 0f;
     [SerializeField] float moveSpeed = 7f;
 
@@ -94,17 +94,20 @@ public class PlayerMovement : MonoBehaviour
     public void PointerDownLeft()
     {
         dirX = -1f; // Bergerak ke kiri
+        MusicManager.instance.PlayFootStep();
     }
 
     public void PointerDownRight()
     {
         dirX = 1f; // Bergerak ke kanan
+        MusicManager.instance.PlayFootStep();
     }
 
     // Dipanggil saat tombol dilepas
     public void PointerUp()
     {
         dirX = 0f; // Berhenti
+        MusicManager.instance.StopFootStep();
     }
 
     private void FixedUpdate()
@@ -117,6 +120,16 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jump);
+            MusicManager.instance.JumpSFX();
+        }
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Ground"))
+        {
+            MusicManager.instance.PlaySFX(MusicManager.Landing);
         }
     }
 }

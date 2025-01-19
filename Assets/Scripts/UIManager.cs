@@ -6,12 +6,16 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] public Sprite[] UIKalah;
+    [SerializeField] public Sprite[] popUpSprites;
     public bool isRestarted = false;
 
     public MusicManager MusicManager;
     public Button buttonRestart;
 
     public Image anak_GameOver;
+    public Image popUpImage;
+
+    public Animation pop_up;
 
 
 
@@ -39,4 +43,35 @@ public class UIManager : MonoBehaviour
             }
         }
     }
+
+    public void popUpNotif()
+    {
+        pop_up.PlayQueued("pop_up");
+        /*        StartCoroutine(WaitForAnimationToEnd("AnimationName", () =>
+                {
+                    // Kode ini akan dijalankan setelah animasi selesai
+                    Debug.Log("Animasi selesai! Eksekusi kode berikutnya.");
+                }));
+                popUpGameObject.SetActive(false);
+                popUp.SetBool("isClicked", false);*/
+    }
+
+/*    private IEnumerator WaitForAnimationToEnd(string pop_up, System.Action callback)
+    {
+        // Mendapatkan informasi tentang animasi
+        AnimatorStateInfo stateInfo = popUp.GetCurrentAnimatorStateInfo(0);
+
+        // Memainkan animasi
+        popUp.SetBool("isClicked", true);
+
+        // Menunggu hingga animasi selesai
+        while (stateInfo.IsName(pop_up) && stateInfo.normalizedTime < 1f)
+        {
+            stateInfo = popUp.GetCurrentAnimatorStateInfo(0);
+            yield return null;
+        }
+
+        // Callback setelah animasi selesai
+        callback?.Invoke();
+    }*/
 }
