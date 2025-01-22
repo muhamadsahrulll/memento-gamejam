@@ -17,12 +17,17 @@ public class UIManager : MonoBehaviour
 
     public Animation pop_up;
 
+    public Color colorMute;
+    public Color colorUnmute;
 
-
+    public Button musik;
+    public SuaraManager SuaraManager;
     // Start is called before the first frame update
     void Start()
     {
+        musik.onClick.AddListener(SuaraManager.musik_OnOff);
         MusicManager = GameObject.Find("MusicManager").GetComponent<MusicManager>();
+        
     }
 
     // Update is called once per frame
@@ -47,31 +52,31 @@ public class UIManager : MonoBehaviour
     public void popUpNotif()
     {
         pop_up.PlayQueued("pop_up");
-        /*        StartCoroutine(WaitForAnimationToEnd("AnimationName", () =>
-                {
-                    // Kode ini akan dijalankan setelah animasi selesai
-                    Debug.Log("Animasi selesai! Eksekusi kode berikutnya.");
-                }));
-                popUpGameObject.SetActive(false);
-                popUp.SetBool("isClicked", false);*/
+       
     }
 
-/*    private IEnumerator WaitForAnimationToEnd(string pop_up, System.Action callback)
+    public void ChangeButtonColor()
     {
-        // Mendapatkan informasi tentang animasi
-        AnimatorStateInfo stateInfo = popUp.GetCurrentAnimatorStateInfo(0);
-
-        // Memainkan animasi
-        popUp.SetBool("isClicked", true);
-
-        // Menunggu hingga animasi selesai
-        while (stateInfo.IsName(pop_up) && stateInfo.normalizedTime < 1f)
+        if(MusicManager.storeIsMusicMute == true)
         {
-            stateInfo = popUp.GetCurrentAnimatorStateInfo(0);
-            yield return null;
-        }
+            // Ambil ColorBlock dari Button
+            ColorBlock colorBlock = musik.colors;
 
-        // Callback setelah animasi selesai
-        callback?.Invoke();
-    }*/
+            // Ubah warna NormalColor
+            colorBlock.selectedColor = colorMute;
+
+            // Terapkan kembali ColorBlock ke Button
+            musik.colors = colorBlock;
+        } else
+        {
+            // Ambil ColorBlock dari Button
+            ColorBlock colorBlock = musik.colors;
+
+            // Ubah warna NormalColor
+            colorBlock.selectedColor = colorUnmute;
+
+            // Terapkan kembali ColorBlock ke Button
+            musik.colors = colorBlock;
+        }
+    }
 }

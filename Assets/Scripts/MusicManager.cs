@@ -15,6 +15,7 @@ public class MusicManager : MonoBehaviour
 
     public VideoPlayer videoPlayer;
     public bool isVideoMute = false;
+    public bool storeIsMusicMute = false;
 
     public static MusicManager instance;
 
@@ -134,6 +135,19 @@ public class MusicManager : MonoBehaviour
         {
             Debug.Log("Video di UnMute");
         }
+    }
 
+    public void MusicOnOff(bool state)
+    {
+        storeIsMusicMute = state;
+        if (storeIsMusicMute == true)
+        {
+            Debug.Log("musik di Mute");
+        }
+
+        else
+        {
+            Debug.Log("musik di UnMute");
+        }
     }
 }

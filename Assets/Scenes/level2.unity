@@ -1121,7 +1121,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.0235405, y: 0.0065500736, z: -10}
+  m_LocalPosition: {x: 0.023319244, y: 0.006649971, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1486,7 +1486,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 775331088}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6924792, y: 0.26974565}
   m_AnchorMax: {x: 0.7818751, y: 0.47740287}
@@ -2453,14 +2453,14 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1016873995}
-  - {fileID: 1789895082}
   - {fileID: 808986382972574412}
   - {fileID: 915323100871635978}
   - {fileID: 6820078705193556426}
   - {fileID: 626005625}
   - {fileID: 22597478263072318}
   - {fileID: 1606751365264701174}
+  - {fileID: 1016873995}
+  - {fileID: 1789895082}
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2505,6 +2505,10 @@ MonoBehaviour:
   anak_GameOver: {fileID: 283990061}
   popUpImage: {fileID: 1606751365264701171}
   pop_up: {fileID: 1606751365264701175}
+  colorMute: {r: 0, g: 0, b: 0, a: 0}
+  colorUnmute: {r: 0, g: 0, b: 0, a: 0}
+  musik: {fileID: 7841080398213155921}
+  SuaraManager: {fileID: 7841080398674739646}
 --- !u!4 &840947449
 Transform:
   m_ObjectHideFlags: 0
@@ -3011,7 +3015,7 @@ RectTransform:
   - {fileID: 1179283689}
   - {fileID: 621480304}
   m_Father: {fileID: 775331088}
-  m_RootOrder: 0
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5382,7 +5386,7 @@ RectTransform:
   - {fileID: 899681908}
   - {fileID: 106505822}
   m_Father: {fileID: 775331088}
-  m_RootOrder: 1
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -6468,7 +6472,7 @@ RectTransform:
   m_Children:
   - {fileID: 5524005711388717177}
   m_Father: {fileID: 775331088}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.028, y: 0.83300006}
   m_AnchorMax: {x: 0.08400001, y: 0.9627315}
@@ -6683,7 +6687,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 775331088}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
   m_AnchorMin: {x: 0.04327084, y: 0.06946287}
   m_AnchorMax: {x: 0.14114581, y: 0.28219435}
@@ -6743,7 +6747,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 775331088}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.19000001, y: 0.06946287}
   m_AnchorMax: {x: 0.28800002, y: 0.28219435}
@@ -6955,7 +6959,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 775331088}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.6757315}
   m_AnchorMax: {x: 1, y: 1}
@@ -7762,7 +7766,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 775331088}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.851, y: 0.034402847}
   m_AnchorMax: {x: 0.96300006, y: 0.2981343}
@@ -8693,7 +8697,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storeBool: 0
-  musik: {fileID: 7841080398213155921}
   isMusicMute: 0
   UIManager: {fileID: 775331090}
 --- !u!1 &7841080399198499945
