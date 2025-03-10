@@ -1,3 +1,4 @@
+using Unity.Services.Core;
 using Unity.Services.LevelPlay;
 using UnityEngine;
 
@@ -8,9 +9,9 @@ public class LevelPlaySample : MonoBehaviour
     private LevelPlayInterstitialAd interstitialAd;
 
 #if UNITY_ANDROID
-    string appKey = "85460dcd";
-    string bannerAdUnitId = "thnfvcsog13bhn08";
-    string interstitialAdUnitId = "aeyqi3vqlv6o8sh9";
+    string appKey = "214abab8d";
+    string bannerAdUnitId = "y1zncqwlogv88ofr";
+    string interstitialAdUnitId = "zhl0nbhn7yowmnv2";
 #elif UNITY_IPHONE
     string appKey = "8545d445";
     string bannerAdUnitId = "iep3rxsyp9na3rw8";
@@ -33,6 +34,7 @@ public class LevelPlaySample : MonoBehaviour
         // SDK init
         Debug.Log("unity-script: LevelPlay SDK initialization");
         LevelPlay.Init(appKey,adFormats:new []{com.unity3d.mediation.LevelPlayAdFormat.REWARDED});
+        Debug.Log("unity-script: LevelPlay.Init() has been CALLED!");
 
         LevelPlay.OnInitSuccess += SdkInitializationCompletedEvent;
         LevelPlay.OnInitFailed += SdkInitializationFailedEvent;
@@ -40,6 +42,7 @@ public class LevelPlaySample : MonoBehaviour
 
     void EnableAds()
     {
+        Debug.Log("unity-script: EnableAds called");
         //Add ImpressionSuccess Event
         IronSourceEvents.onImpressionDataReadyEvent += ImpressionDataReadyEvent;
 
@@ -107,6 +110,11 @@ public class LevelPlaySample : MonoBehaviour
         if (GUI.Button(loadInterstitialButton, "Load Interstitial"))
         {
             Debug.Log("unity-script: LoadInterstitialButtonClicked");
+            if (interstitialAd == null)
+            {
+                Debug.LogError("unity-script: interstitialAd is NULL!");
+                return;
+            }
             interstitialAd.LoadAd();
         }
 

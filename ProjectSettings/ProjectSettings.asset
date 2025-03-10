@@ -790,11 +790,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 5ff017e6-2cc6-41d9-a16c-602d6c3ec775
+  cloudProjectId: e52efab1-eeef-4bbc-8a75-bfc5d577d054
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: Before Sleep
-  organizationId: semeja-games
+  organizationId: semeja
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
