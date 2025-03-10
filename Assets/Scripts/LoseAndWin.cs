@@ -11,6 +11,8 @@ public class LoseAndWin : MonoBehaviour
     public MusicManager MusicManager;
     public UIManager UIManager;
 
+    public bool showAds = false;
+
     public void Start()
     {
         MusicManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<MusicManager>();
@@ -62,6 +64,12 @@ public class LoseAndWin : MonoBehaviour
                 gameOver.SetActive(true);
                 MusicManager.kalah();
                 MusicManager.vo_kalah_menang.Play();
+
+                //buat nampilin ads
+                showAds = true;
+                AdsManager.instance.BuatShowAds(showAds);
+                
+
                 // Tampilkan pesan debug "kalah"
                 //sceneController.NextLevel("level2");
                 Debug.Log("Kalah");

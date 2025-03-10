@@ -92,7 +92,7 @@ public class LevelPlaySample : MonoBehaviour
         GUI.skin.button.fontSize = (int)(0.035f * Screen.width);
 
 
-        Rect showRewardedVideoButton = new Rect(0.10f * Screen.width, 0.15f * Screen.height, 0.80f * Screen.width, 0.08f * Screen.height);
+        /*Rect showRewardedVideoButton = new Rect(0.10f * Screen.width, 0.15f * Screen.height, 0.80f * Screen.width, 0.08f * Screen.height);
         if (GUI.Button(showRewardedVideoButton, "Show Rewarded Video"))
         {
             Debug.Log("unity-script: ShowRewardedVideoButtonClicked");
@@ -104,17 +104,13 @@ public class LevelPlaySample : MonoBehaviour
             {
                 Debug.Log("unity-script: IronSource.Agent.isRewardedVideoAvailable - False");
             }
-        }
+        }*/
 
-        Rect loadInterstitialButton = new Rect(0.10f * Screen.width, 0.25f * Screen.height, 0.35f * Screen.width, 0.08f * Screen.height);
+        /*Rect loadInterstitialButton = new Rect(0.10f * Screen.width, 0.25f * Screen.height, 0.35f * Screen.width, 0.08f * Screen.height);
         if (GUI.Button(loadInterstitialButton, "Load Interstitial"))
         {
             Debug.Log("unity-script: LoadInterstitialButtonClicked");
-            if (interstitialAd == null)
-            {
-                Debug.LogError("unity-script: interstitialAd is NULL!");
-                return;
-            }
+            
             interstitialAd.LoadAd();
         }
 
@@ -130,9 +126,9 @@ public class LevelPlaySample : MonoBehaviour
             {
                 Debug.Log("unity-script: Levelplay Interstital Ad Ready? - False");
             }
-        }
+        }*/
 
-        Rect loadBannerButton = new Rect(0.10f * Screen.width, 0.35f * Screen.height, 0.35f * Screen.width, 0.08f * Screen.height);
+        /*Rect loadBannerButton = new Rect(0.10f * Screen.width, 0.35f * Screen.height, 0.35f * Screen.width, 0.08f * Screen.height);
         if (GUI.Button(loadBannerButton, "Load Banner"))
         {
             Debug.Log("unity-script: loadBannerButtonClicked");
@@ -144,7 +140,7 @@ public class LevelPlaySample : MonoBehaviour
         {
             Debug.Log("unity-script: HideButtonClicked");
             bannerAd.HideAd();
-        }
+        }*/
     }
 
     #region Init callback handlers
@@ -296,5 +292,17 @@ public class LevelPlaySample : MonoBehaviour
     {
         bannerAd?.DestroyAd();
         interstitialAd?.DestroyAd();
+    }
+
+    public void LoadInterstitialAds()
+    {
+        Debug.Log("unity-script: LoadInterstitialSuccessa");
+        interstitialAd.LoadAd();
+    }
+    
+    public void ShowInterstitialAds()
+    {
+        Debug.Log("unity-script: ShowInterstitialSuccessa");
+        interstitialAd.ShowAd();
     }
 }
