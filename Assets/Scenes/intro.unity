@@ -1291,7 +1291,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1460,15 +1460,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c45c1a2deb238c4494efb5b0b864747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogObjects:
-  - {fileID: 1141248825}
-  - {fileID: 530454313}
-  - {fileID: 2053667240}
-  dialogAudioClips:
-  - {fileID: 8300000, guid: abbb6080294dcb94aa8ead6aea45d972, type: 3}
-  - {fileID: 8300000, guid: e31b7726677c8144d999dd79082de2b6, type: 3}
-  - {fileID: 8300000, guid: 20ade6ede4be487459ca52ef01ec1241, type: 3}
   nextSceneName: level1
+  dialogAudio: {fileID: 0}
 --- !u!114 &1124002853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1481,6 +1474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a36bc68c7ca7e5428a363243adf1f75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MusicManager: {fileID: 0}
   videoPlayer: {fileID: 2059636199}
   videoClip1: {fileID: 32900000, guid: 40c396e20a89cdd4f97a5c8c5cb0e3d2, type: 3}
   level1: level1

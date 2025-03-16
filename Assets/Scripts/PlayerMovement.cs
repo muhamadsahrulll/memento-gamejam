@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     private enum MovementState { idle, walk, jump, fall }
 
-    float dirX;
+    float dirX = 0f;
 
     // Start is called before the first frame update
     private void Start()
@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // Update velocity berdasarkan dirX
-        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        //rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
         /*dirX = Input.GetAxis("Horizontal");
 
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
@@ -48,6 +48,12 @@ public class PlayerMovement : MonoBehaviour
         UpdateAnimation();
 
     }
+
+    private void FixedUpdate()
+    {
+        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+    }
+
 
     void UpdateAnimation()
     {
@@ -110,11 +116,7 @@ public class PlayerMovement : MonoBehaviour
         MusicManager.instance.StopFootStep();
     }
 
-    private void FixedUpdate()
-    {
-        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
-    }
-
+    
     public void Jump()
     {
         if (isGrounded())
