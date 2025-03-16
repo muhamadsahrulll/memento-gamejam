@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // Update velocity berdasarkan dirX
-        //rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        //rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y); //jika masih hapus comment
         /*dirX = Input.GetAxis("Horizontal");
 
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
@@ -58,19 +58,10 @@ public class PlayerMovement : MonoBehaviour
     void UpdateAnimation()
     {
         MovementState state;
-        if (dirX > 0f)
+        if (dirX != 0f) // Jika bergerak
         {
             state = MovementState.walk;
-            sprite.flipX = false;
-            // Karakter bergerak ke kanan
-
-        }
-        else if (dirX < 0f)
-        {
-            state = MovementState.walk;
-            sprite.flipX = true;
-            // Karakter bergerak ke kiri
-
+            sprite.flipX = dirX < 0;
         }
         else
         {
