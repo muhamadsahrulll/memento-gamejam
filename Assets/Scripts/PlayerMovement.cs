@@ -15,10 +15,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jump = 0f;
     [SerializeField] float moveSpeed = 7f;
 
+    [SerializeField] float coyoteTime = 0.1f; // Bisa lompat dalam 0.1 detik setelah meninggalkan tanah
+    [SerializeField] float gravityScale = 3f; // Lebih tinggi agar jatuh lebih cepat
+
 
     private enum MovementState { idle, walk, jump, fall }
 
     float dirX = 0f;
+    private float lastGroundedTime; // Menyimpan waktu terakhir di tanah
 
     // Start is called before the first frame update
     private void Start()
@@ -107,15 +111,15 @@ public class PlayerMovement : MonoBehaviour
         MusicManager.instance.StopFootStep();
     }
 
-    
+
     public void Jump()
     {
-        if (isGrounded())
+        if (isGrounded() || Time.time - lastGroundedTime <= coyoteTime)
         {
             rb.velocity = new Vector2(rb.velocity.x, jump);
             MusicManager.instance.JumpSFX();
+            lastGroundedTime = -1f; // Reset agar tidak bisa lompat terus-menerus
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
