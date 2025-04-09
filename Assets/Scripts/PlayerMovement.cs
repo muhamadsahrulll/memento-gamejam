@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     float dirX = 0f;
     private float lastGroundedTime; // Menyimpan waktu terakhir di tanah
+    private bool isJumping = false;
 
     // Start is called before the first frame update
     private void Start()
@@ -50,6 +51,12 @@ public class PlayerMovement : MonoBehaviour
         }*/
 
         UpdateAnimation();
+
+        // Menyimpan waktu terakhir berada di tanah
+        if (isGrounded())
+        {
+            lastGroundedTime = Time.time;
+        }
 
     }
 
@@ -112,14 +119,24 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    public void Jump()
+    // **TOMBOL LONCAT**
+    public void PointerDownJump()
     {
         if (isGrounded() || Time.time - lastGroundedTime <= coyoteTime)
         {
+            isJumping = true; // Menandai tombol loncat sedang ditekan
             rb.velocity = new Vector2(rb.velocity.x, jump);
             MusicManager.instance.JumpSFX();
-            lastGroundedTime = -1f; // Reset agar tidak bisa lompat terus-menerus
         }
+    }
+
+    public void PointerUpJump()
+    {
+        if (rb.velocity.y > 0)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f); // Memotong kecepatan loncat agar terasa lebih natural
+        }
+        isJumping = false; // Tombol loncat dilepas
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
