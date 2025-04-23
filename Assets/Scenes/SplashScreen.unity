@@ -479,7 +479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 2097675598}
-  videoClip1: {fileID: 32900000, guid: eefc6fa28c922974e958a4688d0c4b3b, type: 3}
+  videoClip1: {fileID: 32900000, guid: 161074e1f76bee54eb662a5c4abedb6f, type: 3}
   videoClip2: {fileID: 32900000, guid: bb458f663cae5594faf53229121cc7fd, type: 3}
   mainmenu: mainmenu
 --- !u!4 &2046060195
