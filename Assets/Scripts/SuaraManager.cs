@@ -70,7 +70,7 @@ public class SuaraManager : MonoBehaviour
             MusicManager.instance.musicScource.Play();
             isMusicMute = false;
             StoreToMusik(false);
-            UIManager.ChangeButtonColor();
+            //UIManager.ChangeButtonColor();
         }
         else
         {
@@ -78,7 +78,7 @@ public class SuaraManager : MonoBehaviour
             MusicManager.instance.musicScource.Pause();
             isMusicMute = true;
             StoreToMusik(true);
-            UIManager.ChangeButtonColor();
+            //UIManager.ChangeButtonColor();
         }
         
     }

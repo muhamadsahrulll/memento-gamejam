@@ -792,10 +792,10 @@ RectTransform:
   m_Father: {fileID: 1327890119}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.15370889, y: 0.021240601}
-  m_AnchorMax: {x: 0.830709, y: 0.96300006}
-  m_AnchoredPosition: {x: 3.2800293, y: 2.6318054}
-  m_SizeDelta: {x: 11.8984375, y: 2.6436157}
+  m_AnchorMin: {x: 0.20667182, y: 0.1092855}
+  m_AnchorMax: {x: 0.7936719, y: 0.9152856}
+  m_AnchoredPosition: {x: -0.26800537, y: 4.5}
+  m_SizeDelta: {x: -4.479904, y: 2.758194}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1004739127
 MonoBehaviour:
@@ -953,10 +953,10 @@ RectTransform:
   m_Father: {fileID: 1327890119}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.76437145, y: 0.79300004}
-  m_AnchorMax: {x: 0.830709, y: 0.934}
-  m_AnchoredPosition: {x: -2, y: 2.5}
-  m_SizeDelta: {x: 2.2387085, y: -0.8439026}
+  m_AnchorMin: {x: 0.7407938, y: 0.74700004}
+  m_AnchorMax: {x: 0.80920625, y: 0.8861071}
+  m_AnchoredPosition: {x: 0, y: 2}
+  m_SizeDelta: {x: -1.7612915, y: 1.1560974}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1154706967
 MonoBehaviour:
@@ -2427,6 +2427,14 @@ PrefabInstance:
     - target: {fileID: 7586566082464525191, guid: 96d9d1b06ca19ba499c0e9953c58466d, type: 3}
       propertyPath: m_Name
       value: MusicManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586566082854959230, guid: 96d9d1b06ca19ba499c0e9953c58466d, type: 3}
+      propertyPath: Priority
+      value: 170
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586566082854959230, guid: 96d9d1b06ca19ba499c0e9953c58466d, type: 3}
+      propertyPath: m_Volume
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96d9d1b06ca19ba499c0e9953c58466d, type: 3}

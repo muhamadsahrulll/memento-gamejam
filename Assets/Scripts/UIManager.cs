@@ -36,6 +36,8 @@ public class UIManager : MonoBehaviour
 
     }
 
+
+
     public void isRestart()
     {
         if (buttonRestart == true)
@@ -63,7 +65,7 @@ public class UIManager : MonoBehaviour
             ColorBlock colorBlock = musik.colors;
 
             // Ubah warna NormalColor
-            colorBlock.selectedColor = colorMute;
+            colorBlock.normalColor = colorMute;
 
             // Terapkan kembali ColorBlock ke Button
             musik.colors = colorBlock;
@@ -73,7 +75,7 @@ public class UIManager : MonoBehaviour
             ColorBlock colorBlock = musik.colors;
 
             // Ubah warna NormalColor
-            colorBlock.selectedColor = colorUnmute;
+            colorBlock.normalColor = colorUnmute;
 
             // Terapkan kembali ColorBlock ke Button
             musik.colors = colorBlock;
