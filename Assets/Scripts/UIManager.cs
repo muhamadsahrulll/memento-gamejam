@@ -9,6 +9,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] public Sprite[] popUpSprites;
     public bool isRestarted = false;
 
+    public Sprite spriteMusicOn;
+    public Sprite spriteMusicOff;
+
     public MusicManager MusicManager;
     public Button buttonRestart;
 
@@ -21,13 +24,15 @@ public class UIManager : MonoBehaviour
     public Color colorUnmute;
 
     public Button musik;
+    public Image musikIcon; // Image komponen dari tombol
     public SuaraManager SuaraManager;
     // Start is called before the first frame update
     void Start()
     {
         musik.onClick.AddListener(SuaraManager.musik_OnOff);
         MusicManager = GameObject.Find("MusicManager").GetComponent<MusicManager>();
-        
+
+        UpdateMusicIcon();
     }
 
     // Update is called once per frame
@@ -36,6 +41,17 @@ public class UIManager : MonoBehaviour
 
     }
 
+    public void UpdateMusicIcon()
+    {
+        if (MusicManager.storeIsMusicMute)
+        {
+            musikIcon.sprite = spriteMusicOff;
+        }
+        else
+        {
+            musikIcon.sprite = spriteMusicOn;
+        }
+    }
 
 
     public void isRestart()
@@ -57,7 +73,7 @@ public class UIManager : MonoBehaviour
        
     }
 
-    public void ChangeButtonColor()
+    /*public void ChangeButtonColor()
     {
         if(MusicManager.storeIsMusicMute == true)
         {
@@ -80,5 +96,5 @@ public class UIManager : MonoBehaviour
             // Terapkan kembali ColorBlock ke Button
             musik.colors = colorBlock;
         }
-    }
+    }*/
 }

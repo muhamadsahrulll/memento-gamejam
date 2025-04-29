@@ -480,7 +480,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 2097675598}
   videoClip1: {fileID: 32900000, guid: d6e72d42e088faf43a5e0604c202e611, type: 3}
-  videoClip2: {fileID: 32900000, guid: bb458f663cae5594faf53229121cc7fd, type: 3}
+  videoClip2: {fileID: 32900000, guid: 19219beb8397d5d4da976a59fd0c3760, type: 3}
   mainmenu: mainmenu
 --- !u!4 &2046060195
 Transform:

@@ -22,7 +22,7 @@ public class SuaraManager : MonoBehaviour
     }
     private void Awake()
     {
-        UIManager.ChangeButtonColor();
+        //UIManager.ChangeButtonColor();
     }
     public void UpdateBool(bool value)
     {
@@ -80,6 +80,6 @@ public class SuaraManager : MonoBehaviour
             StoreToMusik(true);
             //UIManager.ChangeButtonColor();
         }
-        
+        UIManager.UpdateMusicIcon(); // ganti ikon sesuai state
     }
 }
