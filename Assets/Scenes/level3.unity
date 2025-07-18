@@ -2016,7 +2016,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.25565, y: 0.00654006, z: -10}
+  m_LocalPosition: {x: 0.023319244, y: 0.006649971, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4039,6 +4039,74 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1179356247
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2561356545104578709, guid: f0238c13e51b19d44a2f0c79e0cc11b1, type: 3}
+      propertyPath: m_RootOrder
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561356545104578709, guid: f0238c13e51b19d44a2f0c79e0cc11b1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.47321823
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561356545104578709, guid: f0238c13e51b19d44a2f0c79e0cc11b1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.45665234
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561356545104578709, guid: f0238c13e51b19d44a2f0c79e0cc11b1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.08061123
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561356545104578709, guid: f0238c13e51b19d44a2f0c79e0cc11b1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561356545104578709, guid: f0238c13e51b19d44a2f0c79e0cc11b1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561356545104578709, guid: f0238c13e51b19d44a2f0c79e0cc11b1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561356545104578709, guid: f0238c13e51b19d44a2f0c79e0cc11b1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561356545104578709, guid: f0238c13e51b19d44a2f0c79e0cc11b1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561356545104578709, guid: f0238c13e51b19d44a2f0c79e0cc11b1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561356545104578709, guid: f0238c13e51b19d44a2f0c79e0cc11b1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561356545104578711, guid: f0238c13e51b19d44a2f0c79e0cc11b1, type: 3}
+      propertyPath: m_Name
+      value: InterstitialAds
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f0238c13e51b19d44a2f0c79e0cc11b1, type: 3}
+--- !u!114 &1179356248 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2561356545104578710, guid: f0238c13e51b19d44a2f0c79e0cc11b1, type: 3}
+  m_PrefabInstance: {fileID: 1179356247}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ac9d105aa881843b2ae712bdd3b5c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1181434479
 GameObject:
   m_ObjectHideFlags: 0
@@ -4116,6 +4184,7 @@ MonoBehaviour:
   MusicManager: {fileID: 0}
   UIManager: {fileID: 775331090}
   showAds: 0
+  interstitialAdsScript: {fileID: 0}
 --- !u!212 &1181434483
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5451,6 +5520,7 @@ MonoBehaviour:
   MusicManager: {fileID: 0}
   UIManager: {fileID: 775331090}
   showAds: 0
+  interstitialAdsScript: {fileID: 1179356248}
 --- !u!1 &1906652334
 GameObject:
   m_ObjectHideFlags: 0
@@ -6005,6 +6075,7 @@ MonoBehaviour:
   MusicManager: {fileID: 0}
   UIManager: {fileID: 775331090}
   showAds: 0
+  interstitialAdsScript: {fileID: 1179356248}
 --- !u!1 &2070787148
 GameObject:
   m_ObjectHideFlags: 0
@@ -8569,6 +8640,7 @@ MonoBehaviour:
   MusicManager: {fileID: 0}
   UIManager: {fileID: 775331090}
   showAds: 0
+  interstitialAdsScript: {fileID: 1179356248}
 --- !u!212 &5788663567200913599
 SpriteRenderer:
   m_ObjectHideFlags: 0

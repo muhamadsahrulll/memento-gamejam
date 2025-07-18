@@ -13,6 +13,9 @@ public class LoseAndWin : MonoBehaviour
 
     public bool showAds = false;
 
+    //ads
+    public InterstitialAdsScript interstitialAdsScript;
+
     public void Start()
     {
         MusicManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<MusicManager>();
@@ -27,6 +30,9 @@ public class LoseAndWin : MonoBehaviour
         }
 
         Debug.Log("UIManager reference: " + UIManager);
+
+        //ads
+        interstitialAdsScript.LoadInterstitialAd();
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -67,7 +73,7 @@ public class LoseAndWin : MonoBehaviour
 
                 //buat nampilin ads
                 showAds = true;
-                AdsManager.instance.BuatShowAds(showAds);
+                interstitialAdsScript.ShowInterstitialAd();
                 
 
                 // Tampilkan pesan debug "kalah"

@@ -1269,63 +1269,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -0.00012207031, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1352160132
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1352160134}
-  - component: {fileID: 1352160133}
-  - component: {fileID: 1352160135}
-  m_Layer: 0
-  m_Name: Ads Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1352160133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1352160132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 191f5798a75bd42589f98898505e981f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1352160134
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1352160132}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.63469136, y: -0.5312382, z: 0.10608126}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1352160135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1352160132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46fb5e445f804524cb90e95d8214540c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1368519286
 GameObject:
   m_ObjectHideFlags: 0
@@ -1609,6 +1552,8 @@ MonoBehaviour:
   - {fileID: 97450385, guid: c7e82aba07efe3942ba2d49bf428e6b2, type: 3}
   - {fileID: -2082125391, guid: f1ee981ed316d364984da3c94d63f7f2, type: 3}
   isRestarted: 0
+  spriteMusicOn: {fileID: -415129342, guid: 83258f3917e1cb847817514c8f473ca2, type: 3}
+  spriteMusicOff: {fileID: -1925813430, guid: 2388de5ec7c58c54db6d007c85f4ea95, type: 3}
   MusicManager: {fileID: 0}
   buttonRestart: {fileID: 0}
   anak_GameOver: {fileID: 0}
@@ -1617,6 +1562,7 @@ MonoBehaviour:
   colorMute: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
   colorUnmute: {r: 1, g: 1, b: 1, a: 1}
   musik: {fileID: 1592361113}
+  musikIcon: {fileID: 1592361114}
   SuaraManager: {fileID: 2053557580}
 --- !u!1 &1536777792
 GameObject:
